@@ -22,6 +22,7 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
         notifyDataSetChanged()
     }
 
+
     //filter search
     fun filter(query: String) {
         filteredList = userList.filter { user ->
@@ -31,7 +32,7 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitHubUserViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_user, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_grid, parent, false) //item_list_user
         return GitHubUserViewHolder(view)
     }
     override fun onBindViewHolder(holder: GitHubUserViewHolder, position: Int) {
@@ -47,10 +48,12 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
     inner class GitHubUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(user: GitHubUser) {
 
-            itemView.findViewById<TextView>(R.id.Text_Name).text = user.login
-            itemView.findViewById<TextView>(R.id.Text_Deskripsi).text = user.starred_url
-            Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Image_Post))
-            Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Profile))
+            itemView.findViewById<TextView>(R.id.TeksName_Grid_Item).text = user.login // Teks_Name
+            Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Photo_Grid)) //Image_Post
+            //itemView.findViewById<TextView>(R.id.Teks_Location).text = user.location
+            //Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Profile))
+
+
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, Activity_User_Detail::class.java)

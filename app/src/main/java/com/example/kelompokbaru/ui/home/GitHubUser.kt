@@ -7,13 +7,15 @@ data class GitHubUser (
     val followers: Int,
     val following: Int,
     val avatar_url: String,
-    val starred_url: String
+    val starred_url: String,
+    val location: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readInt(),
         parcel.readInt(),
+        parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: ""
     )
@@ -25,6 +27,7 @@ data class GitHubUser (
         parcel.writeInt(following)
         parcel.writeString(avatar_url)
         parcel.writeString(starred_url)
+        parcel.writeString(location)
     }
 
     override fun describeContents(): Int {

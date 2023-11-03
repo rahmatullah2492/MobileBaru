@@ -15,8 +15,9 @@
         android:theme="@style/Theme.KelompokBaru"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.Activity_User_Detail"
+            android:name=".ui.motion_layout.IntroActivity"
             android:exported="false" />
+        <activity android:name=".ui.home.Activity_User_Detail" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.login.MainActivity_Login" />
         <activity android:name=".ui.register.MainActivity_Register" />

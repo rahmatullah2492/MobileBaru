@@ -3,10 +3,14 @@ package com.example.kelompokbaru.ui.home
 import GitHubUser
 import android.os.Bundle
 import android.provider.ContactsContract.Profile
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kelompokbaru.R
 import com.squareup.picasso.Picasso
@@ -19,8 +23,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 class Activity_User_Detail : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.item_list_detail) // Gantilah dengan layout XML yang sesuai
+        setContentView(R.layout.item_list_detail)
 
         //val user = intent.getParcelableExtra<GitHubUser>("user")
         val login = intent.getStringExtra("login")
@@ -35,21 +40,20 @@ class Activity_User_Detail : AppCompatActivity() {
             val call = service.getUserDetail(login)
             call.enqueue(object :Callback<GitHubUser>{
                 override fun onResponse(call: Call<GitHubUser>, response: Response<GitHubUser>) {
-                    if (response.isSuccessful){
+                    if (response.isSuccessful) {
                         val user = response.body()
                         val imgProfile = findViewById<ImageView>(R.id.Profile_Pojok_kiri_Detail)
                         val txtName = findViewById<TextView>(R.id.Teks_Detail)
                         val txtFollowers = findViewById<TextView>(R.id.Text_Followers)
                         val txtFollowing = findViewById<TextView>(R.id.Text_Following)
 
-                        Picasso.get()
-                            .load(user?.avatar_url)
-                            .into(imgProfile)
+                        Picasso.get().load(user?.avatar_url).into(imgProfile)
                         txtName.text = user?.name
                         txtFollowers.text = user?.followers.toString()
                         txtFollowing.text = user?.following.toString()
 
-                    }else{
+
+                    } else {
 
                     }
                 }
@@ -60,7 +64,8 @@ class Activity_User_Detail : AppCompatActivity() {
             })
 
         }
-
+    }
+}
 
 
 
@@ -74,8 +79,8 @@ class Activity_User_Detail : AppCompatActivity() {
 //                btnFollow.text = "Follow"
 //                btnFollow.setBackgroundResource(R.drawable.baseline_favorite_24)
 //            }
-        }
-
-        }
+//        }
+//
+//        }
    // }
 

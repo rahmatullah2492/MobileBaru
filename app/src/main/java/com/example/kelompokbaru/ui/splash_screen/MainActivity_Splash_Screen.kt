@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.kelompokbaru.MainActivity
 import com.example.kelompokbaru.R
-import com.example.kelompokbaru.ui.login.MainActivity_Login
+import com.example.kelompokbaru.ui.motion_layout.IntroActivity
 
 class MainActivity_Splash_Screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class MainActivity_Splash_Screen : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             // Ini pindah ke MainActivity_Login
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, IntroActivity::class.java))
             finish()
         }, 3000) // Delay selama 3 detik
     }
