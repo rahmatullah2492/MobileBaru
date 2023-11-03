@@ -14,11 +14,10 @@ class MainActivity_Splash_Screen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_splash_screen)
 
-
         supportActionBar?.hide() // menyembunyikan actionBar
-
         Handler(Looper.getMainLooper()).postDelayed({
-            // Ini pindah ke MainActivity_Login
+
+        // Ini pindah ke MainActivity_Login
             startActivity(Intent(this, IntroActivity::class.java))
             finish()
         }, 3000) // Delay selama 3 detik

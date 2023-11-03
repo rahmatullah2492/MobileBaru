@@ -7,7 +7,8 @@ import androidx.lifecycle.ViewModel
 class NotificationsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        //penanda jika masuk ke menu profil akan tampil tulisan berikut
+        value = "Halaman ini merupakan Profile User "
     }
     val text: LiveData<String> = _text
 }

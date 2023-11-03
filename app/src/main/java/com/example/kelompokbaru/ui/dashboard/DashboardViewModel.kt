@@ -7,7 +7,8 @@ import androidx.lifecycle.ViewModel
 class DashboardViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        //penanda jika masuk ke menu favorite akan tampil tulisan berikut
+        value = "Halaman ini merupakan favorite"
     }
     val text: LiveData<String> = _text
 }
