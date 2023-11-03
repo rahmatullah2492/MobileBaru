@@ -17,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+
             <ImageView
                 android:id="@+id/Photo_Grid"
                 android:layout_width="500dp"
@@ -24,6 +26,15 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 tools:src="@drawable/film" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:progress="@integer/google_play_services_version"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"

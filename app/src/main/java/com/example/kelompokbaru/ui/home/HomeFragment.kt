@@ -1,6 +1,7 @@
 package com.example.kelompokbaru.ui.home
 
 import GitHubUser
+import GitHubUserAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

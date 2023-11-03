@@ -1,14 +1,16 @@
-package com.example.kelompokbaru.ui.home
 
-import GitHubUser
+
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kelompokbaru.R
+import com.example.kelompokbaru.ui.home.Activity_User_Detail
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewHolder>() {
@@ -16,12 +18,11 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
     private var userList: List<GitHubUser> = ArrayList()
     private var filteredList: List<GitHubUser> = ArrayList() // filter search
 
-    fun setUserList(users: List<GitHubUser>){
+    fun setUserList(users: List<GitHubUser>) {
         userList = users
         filteredList = users // filter search
         notifyDataSetChanged()
     }
-
 
     //filter search
     fun filter(query: String) {
@@ -32,36 +33,53 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitHubUserViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_grid, parent, false) //item_list_user
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_grid, parent, false)
         return GitHubUserViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: GitHubUserViewHolder, position: Int) {
-        //val user = userList[position]
         val user = filteredList[position]
         holder.bind(user)
     }
+
     override fun getItemCount(): Int {
         return filteredList.size
-        //return userList.size
     }
 
     inner class GitHubUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(user: GitHubUser) {
+            val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar_Detail)
+            val imageView = itemView.findViewById<ImageView>(R.id.Photo_Grid)
+            val nameTextView = itemView.findViewById<TextView>(R.id.TeksName_Grid_Item)
 
-            itemView.findViewById<TextView>(R.id.TeksName_Grid_Item).text = user.login // Teks_Name
-            Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Photo_Grid)) //Image_Post
-            //itemView.findViewById<TextView>(R.id.Teks_Location).text = user.location
-            //Picasso.get().load(user.avatar_url).into(itemView.findViewById<ImageView>(R.id.Profile))
+            // Sembunyikan gambar dan tampilkan progres bar
+            imageView.visibility = View.INVISIBLE
+            progressBar.visibility = View.VISIBLE
 
+            nameTextView.text = user.login
 
+            // Gunakan Picasso untuk mengunduh dan menampilkan gambar dengan listener
+            Picasso.get()
+                .load(user.avatar_url)
+                .into(imageView, object : Callback {
+                    override fun onSuccess() {
+                        // Gambar berhasil dimuat, sembunyikan progres bar
+                        progressBar.visibility = View.INVISIBLE
+                        imageView.visibility = View.VISIBLE
+                    }
+
+                    override fun onError(e: Exception?) {
+                        // Tangani kesalahan jika gambar gagal dimuat
+                        progressBar.visibility = View.INVISIBLE
+                        imageView.visibility = View.VISIBLE
+                    }
+                })
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, Activity_User_Detail::class.java)
                 intent.putExtra("login", user.login)
                 itemView.context.startActivity(intent)
             }
-
         }
     }
-
 }
