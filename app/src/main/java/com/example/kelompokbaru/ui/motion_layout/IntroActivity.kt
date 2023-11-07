@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.kelompokbaru.MainActivity
 import com.example.kelompokbaru.R
+import com.example.kelompokbaru.ui.login.MainActivity_Login
 import com.google.android.material.tabs.TabLayout
 import java.util.ArrayList
 import java.util.List
@@ -41,7 +42,7 @@ class IntroActivity : AppCompatActivity() {
 
         // Check if the intro screen has been opened before
         if (restorePrefData()) {
-            val mainActivity = Intent(applicationContext, MainActivity::class.java)
+            val mainActivity = Intent(applicationContext, MainActivity_Login::class.java)
             startActivity(mainActivity)
             finish()
         }
@@ -98,7 +99,7 @@ class IntroActivity : AppCompatActivity() {
 
         // Get Started button click listener
         btnGetStarted.setOnClickListener {
-            val mainActivity = Intent(applicationContext, MainActivity::class.java)
+            val mainActivity = Intent(applicationContext, MainActivity_Login::class.java)
             startActivity(mainActivity)
             savePrefsData()
             finish()

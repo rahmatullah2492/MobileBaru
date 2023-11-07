@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "457664543447",
+    "project_id": "kelompokmobilebaru",
+    "storage_bucket": "kelompokmobilebaru.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457664543447:android:3a7b1848a04e9e77774e92",
+        "android_client_info": {
+          "package_name": "com.example.kelompokbaru"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl5Yf0NeOq2490QMENS-KOfgzcuDR_GcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

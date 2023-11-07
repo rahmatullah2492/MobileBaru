@@ -53,6 +53,16 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    implementation("com.google.firebase:firebase-auth:22.2.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.gms:google-services:4.3.10")
+    implementation("com.google.firebase:firebase-perf-ktx:20.5.0")
+    platform("com.google.firebase:firebase-bom:29.0.1")
+    implementation("com.google.firebase:firebase-bom:31.2.2")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+
 
     // untuk database room
     implementation ("androidx.room:room-runtime:2.2.5")
