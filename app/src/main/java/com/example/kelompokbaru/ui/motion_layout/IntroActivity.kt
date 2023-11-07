@@ -61,9 +61,9 @@ class IntroActivity : AppCompatActivity() {
 
         // Fill list screen
         val mList = ArrayList<ScreenItem>()
-        mList.add(ScreenItem("Fresh Food", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img1))
-        mList.add(ScreenItem("Fast Delivery", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img2))
-        mList.add(ScreenItem("Easy Payment", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img3))
+        mList.add(ScreenItem("Enjoy Your Trip", "Enjoying travel is about collecting priceless memories and creating unforgettable stories along the way", R.drawable.vektormotionsatu))
+        mList.add(ScreenItem("Discovery a New Experience", "Discovering new experiences is like opening the door to an infinite world, leading to never-ending adventure and insight", R.drawable.vektormotiondua))
+        mList.add(ScreenItem("Enjoy Your Travel", "Enjoying travel is about pursuing adventure, discovering new beauty, and feeling freedom with every step we take", R.drawable.vektormotiontiga))
 
         // Setup viewpager
         screenPager = findViewById(R.id.screen_viewpager)
