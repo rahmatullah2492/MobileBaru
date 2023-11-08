@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".ui.register.MainActivity_Register">
 
     <ImageView
-<<<<<<< Updated upstream
         android:id="@+id/imageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -242,79 +238,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-        android:id="@+id/backKiri_SignUp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="-170dp"
-        android:layout_marginTop="-45dp"
-        android:src="@drawable/baseline_arrow_back_24" />
-
-    <ImageView
-        android:layout_width="340dp"
-        android:layout_height="121dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/logokelompok"/>
-
-    <EditText
-        android:id="@+id/editTextTextUsernameApp"
-        android:layout_marginTop="70dp"
-        android:layout_width="340dp"
-        android:layout_height="58dp"
-        android:hint="UsernameApp"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextTextUsernameGitHub"
-        android:layout_width="340dp"
-        android:layout_height="58dp"
-        android:hint="UsernameGitHub"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="340dp"
-        android:layout_height="58dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="340dp"
-        android:layout_height="58dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
-    <Button
-        android:id="@+id/button_signUp"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Sign Up"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Sudah punya akun?"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/text_bottomLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:text="Login"
-            android:textColor="#5C1FBF"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-</LinearLayout>
->>>>>>> Stashed changes

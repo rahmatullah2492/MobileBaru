@@ -1,12 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-<<<<<<< Updated upstream
     id("org.jetbrains.kotlin.kapt")
     id("com.google.gms.google-services")
-=======
-    id ("org.jetbrains.kotlin.kapt")
->>>>>>> Stashed changes
 }
 
 android {
@@ -59,11 +55,8 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
-<<<<<<< Updated upstream
     implementation("com.google.firebase:firebase-database-ktx:20.3.0")
-=======
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
->>>>>>> Stashed changes
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

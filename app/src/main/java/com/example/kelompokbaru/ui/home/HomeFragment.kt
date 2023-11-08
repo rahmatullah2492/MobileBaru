@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
             .build()
 
         val service = retrofit.create(GitHubService::class.java)
-        val token ="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"
+        val token ="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"
         val bearerToken = "Bearer $token"
 
         val call = service.getUser(bearerToken)

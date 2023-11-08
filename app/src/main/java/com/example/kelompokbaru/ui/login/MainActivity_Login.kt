@@ -12,7 +12,6 @@ import com.example.kelompokbaru.MainActivity
 import com.example.kelompokbaru.R
 import com.example.kelompokbaru.databinding.ActivityMainLoginBinding
 import com.example.kelompokbaru.databinding.ActivityMainRegisterBinding
-import com.example.kelompokbaru.ui.dashboard.DashboardFragment
 import com.example.kelompokbaru.ui.register.MainActivity_Register
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -79,25 +78,27 @@ class MainActivity_Login : AppCompatActivity() {
     }
 
     private fun loginUser(email: String, password: String) {
-        // Masuk dengan email dan password di Firebase Authentication
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Jika berhasil, tampilkan pesan Toast
+                    // Menyimpan status login ke SharedPreferences
+                    val sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLogin", true)
+                    editor.apply()
+
+                    // Pesan sukses login
                     Toast.makeText(
                         this@MainActivity_Login,
                         "Login berhasil",
                         Toast.LENGTH_SHORT
                     ).show()
-                    // Membuat intent untuk membuka MainActivity
+
+                    // Pindah ke MainActivity
                     val intent = Intent(this@MainActivity_Login, MainActivity::class.java)
-                    // Mengirimkan data user ke MainActivity
-                    intent.putExtra("email", email)
-                    intent.putExtra("password", password)
-                    // Memulai aktivitas baru
                     startActivity(intent)
                 } else {
-                    // Jika gagal, tampilkan pesan error
+                    // Pesan gagal login
                     Toast.makeText(
                         this@MainActivity_Login,
                         "Gagal login: ${task.exception?.message}",
