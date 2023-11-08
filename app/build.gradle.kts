@@ -1,8 +1,12 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+<<<<<<< Updated upstream
     id("org.jetbrains.kotlin.kapt")
     id("com.google.gms.google-services")
+=======
+    id ("org.jetbrains.kotlin.kapt")
+>>>>>>> Stashed changes
 }
 
 android {
@@ -38,6 +42,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -51,7 +59,11 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
+<<<<<<< Updated upstream
     implementation("com.google.firebase:firebase-database-ktx:20.3.0")
+=======
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+>>>>>>> Stashed changes
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -68,9 +80,14 @@ dependencies {
 
 
     // untuk database room
-    implementation ("androidx.room:room-runtime:2.2.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
-    annotationProcessor ("androidx.room:room-compiler:2.2.5")
+
+
+    implementation ("androidx.room:room-runtime:2.4.1")
+    kapt("androidx.room:room-compiler:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
+//    annotationProcessor ("androidx.room:room-compiler:2.4.1")
+
+    
 
     ///////////////////////////////////////////////////////////////////////////////////
 
@@ -92,5 +109,11 @@ dependencies {
 
     //pissaco
     implementation ("com.squareup.picasso:picasso:2.71828")
+
+    //dataStore
+    implementation ("androidx.datastore:datastore-preferences-core:1.0.0")
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+
+
 
 }

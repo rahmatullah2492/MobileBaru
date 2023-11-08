@@ -9,6 +9,7 @@ data class GitHubUser (
     val avatar_url: String,
     val starred_url: String,
     val location: String
+
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",

@@ -195,7 +195,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_follow"
+            android:id="@+id/followButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

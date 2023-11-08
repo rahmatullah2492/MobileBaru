@@ -1,5 +1,3 @@
-
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -50,7 +48,12 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
         fun bind(user: GitHubUser) {
             val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar_Detail)
             val imageView = itemView.findViewById<ImageView>(R.id.Photo_Grid)
+            val profileImageView = itemView.findViewById<ImageView>(R.id.FotoProfil)
             val nameTextView = itemView.findViewById<TextView>(R.id.TeksName_Grid_Item)
+
+            Picasso.get()
+                .load(user.avatar_url) // mengambil gambar avatar url_untuk di tampilkan di FotoHome
+                .into(profileImageView)
 
             // Sembunyikan gambar dan tampilkan progres bar
             imageView.visibility = View.INVISIBLE
@@ -75,11 +78,28 @@ class GitHubUserAdapter : RecyclerView.Adapter<GitHubUserAdapter.GitHubUserViewH
                     }
                 })
 
-            itemView.setOnClickListener {
+
+            //pindah menggunakan nama pengguna
+            nameTextView.setOnClickListener {
                 val intent = Intent(itemView.context, Activity_User_Detail::class.java)
                 intent.putExtra("login", user.login)
+                intent.putExtra("avatar_url", user.avatar_url)
                 itemView.context.startActivity(intent)
             }
+
+
+// pindah menggunakan semua item saat di klik
+//            itemView.setOnClickListener {
+//                val intent = Intent(itemView.context, Activity_User_Detail::class.java)
+//                intent.putExtra("login", user.login)
+//                itemView.context.startActivity(intent)
+//            }
         }
     }
 }
+
+// //menggunakan itemView untuk pindah ke activity detail
+//            itemView.setOnClickListener {
+//                val intent = Intent(itemView.context, Activity_User_Detail::class.java)
+//                intent.putExtra("login", user.login)
+//                itemView.context.startActivity(intent)

@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
             .build()
 
         val service = retrofit.create(GitHubService::class.java)
-        val token ="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"
+        val token ="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"
         val bearerToken = "Bearer $token"
 
         val call = service.getUser(bearerToken)
@@ -90,7 +90,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<GitHubUser>>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
     android:background="@color/white"
     tools:context=".ui.login.MainActivity_Login">
 
@@ -193,3 +194,64 @@
         app:layout_constraintTop_toBottomOf="@+id/loginbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.login.MainActivity_Login">
+
+
+    <ImageView
+        android:layout_width="340dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logokelompok"/>
+
+    <EditText
+        android:id="@+id/editTextTextUsername"
+        android:layout_width="340dp"
+        android:layout_height="58dp"
+        android:hint="Username"
+        android:layout_marginTop="70dp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="340dp"
+        android:layout_height="58dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Sign In"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Belum punya akun?"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/text_bottomDaftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:text="Register"
+            android:textStyle="bold"
+            android:textColor="#5C1FBF"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+>>>>>>> Stashed changes

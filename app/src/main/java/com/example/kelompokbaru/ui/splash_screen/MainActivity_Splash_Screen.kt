@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.kelompokbaru.MainActivity
 import com.example.kelompokbaru.R
 import com.example.kelompokbaru.ui.login.MainActivity_Login
 import com.example.kelompokbaru.ui.motion_layout.IntroActivity
@@ -25,11 +24,16 @@ class MainActivity_Splash_Screen : AppCompatActivity() {
             val sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             val isLogged = sharedPreferences.getBoolean("isLogin", false)
 
+<<<<<<< Updated upstream
             if (isLogged) {
                 startActivity(Intent(this, MainActivity_Login::class.java))
             } else {
                 startActivity(Intent(this, IntroActivity::class.java))
             }
+=======
+            // Ini pindah ke MainActivity_Login
+            startActivity(Intent(this, IntroActivity::class.java))
+>>>>>>> Stashed changes
             finish()
         }, 3000)
     }
