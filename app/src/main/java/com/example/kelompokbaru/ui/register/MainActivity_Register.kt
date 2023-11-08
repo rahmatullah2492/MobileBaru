@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.kelompokbaru.MainActivity
 import com.example.kelompokbaru.R
 import com.example.kelompokbaru.ui.login.MainActivity_Login
+import com.example.kelompokbaru.ui.profile.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase

@@ -1,7 +1,5 @@
-package com.example.kelompokbaru.ui.register
-
+package com.example.kelompokbaru.ui.profile
 import com.google.firebase.database.IgnoreExtraProperties
-
 // anotasi untuk mengabaikan properti tambahan
 @IgnoreExtraProperties
 data class User (

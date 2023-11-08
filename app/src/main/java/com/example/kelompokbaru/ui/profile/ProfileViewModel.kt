@@ -8,7 +8,7 @@ class ProfileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         //penanda jika masuk ke menu profil akan tampil tulisan berikut
-        value = "Halaman ini merupakan Profile User "
+        value = " "
     }
     val text: LiveData<String> = _text
 }
